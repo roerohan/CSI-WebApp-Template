@@ -9,6 +9,8 @@ Structure:
 /config
 /partials
 /views
+    - /layouts
+        - layout.html
     - /admin
         - authenticate.html
         - viewUsers.html
