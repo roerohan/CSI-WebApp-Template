@@ -3,6 +3,8 @@
 node=0
 django=0
 
+CSINodeDir=`pwd`
+
 #If operation is generate or gen
 if [[ $1 =~ "generate" ]] || [[ $1 =~ "gen" ]]
 then
