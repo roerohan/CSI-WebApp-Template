@@ -44,7 +44,7 @@ MongoDB
 ### For Django Template
 ```
 Python 3.6+ (with pip)
-Django: Do pip install django
+Django: Do - pip install django
 ```
 
 ## Usage
@@ -52,8 +52,9 @@ Django: Do pip install django
 The following are the commands that our CLI supports
 
 ```bash
-csi-cli --help : Shows all options
-csi-cli --generate : Generates a template with the afore-mentioned features
-csi-cli --version : Displays the version number
-#TODO
+csi-cli {-h --help}: Help
+csi-cli {gen generate} {-n --node}: Generate Node-js Template
+                       {-d --django}: Generate Django Template
+csi-cli {-D --delete}: Delete Current Project
+csi-cli {-r --reset}: Reset All Changes Made to Template
 ```
