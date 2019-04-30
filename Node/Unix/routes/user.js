@@ -65,7 +65,7 @@ function addUser(req, res) {
             user.save((err, doc) => {
                 if (!err) {
                     console.log(`User Added Successfully`);
-                    alert("Successfully Registered.")
+                    res.send("Successfully Registered.");
                 } else {
                     if (err.name === "MongoError" && err.code === 11000) {
                         let field = err.errmsg.split('users index: ')[1];
