@@ -58,7 +58,7 @@ then
     location=`pwd`
     cd $CSINodeDir/../..
     git pull
-    cd location
+    cd $location
 #For any other option
 else
     echo "Invalid arguments."
