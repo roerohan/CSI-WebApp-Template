@@ -1,5 +1,6 @@
 Structure:
 
+```
 /routes
     - user.js
     - admin.js
@@ -18,3 +19,4 @@ Structure:
         - register.html
 /static
 server.js
+```
