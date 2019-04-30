@@ -58,7 +58,8 @@ then
 elif [[ $1 =~ "--update" ]] || [[ $1 =~ "-u" ]]
 then
     location=`pwd`
-    cd $CSINodeDir/../..
+    cd $CSINodeDir
+    cd ../..
     git pull
     cd $location
 #For any other option
