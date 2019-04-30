@@ -28,6 +28,11 @@ elif [[ $1 =~ "--help" ]] || [[ $1 =~ "-h" ]]
 then
     help=1
 
+#If the operation is --version or -v
+elif [[ $1 =~ "--version" ]] || [[ $1 =~ "-v" ]]
+then
+    echo "1.0.0"
+
 #If the operation is --delete or -D
 elif [[ $1 =~ "--delete" ]] || [[ $1 =~ "-D" ]]
 then

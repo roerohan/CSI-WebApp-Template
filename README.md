@@ -57,6 +57,7 @@ Run the command: csi-cli gen -n OR csi-cli gen -d
 #### The following are the commands that our CLI supports.
 ```bash
 csi-cli {-h --help}: Help
+csi-cli {-v --version}: Version
 csi-cli {gen generate} {-n --node}: Generate Node-js Template
                        {-d --django}: Generate Django Template
 csi-cli {-D --delete}: Delete Current Project
