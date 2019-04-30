@@ -1,6 +1,6 @@
 #!bin/env bash
 
-cd ~/Desktop/Test
+cd ~
 git clone https://github.com/csivitu/CSI-WebApp-Template .CSI-WebApp-Template
 cd .CSI-WebApp-Template/Node/Unix
 export CSINodeDir=`pwd`
