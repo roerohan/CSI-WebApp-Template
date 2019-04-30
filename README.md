@@ -49,8 +49,12 @@ Django: Do - pip install django
 
 ## Usage
 
-The following are the commands that our CLI supports
+```
+Create a directory having the name of the Project
+Run the command: csi-cli gen -n OR csi-cli gen -d
+```
 
+#### The following are the commands that our CLI supports.
 ```bash
 csi-cli {-h --help}: Help
 csi-cli {gen generate} {-n --node}: Generate Node-js Template
