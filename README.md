@@ -57,4 +57,5 @@ csi-cli {gen generate} {-n --node}: Generate Node-js Template
                        {-d --django}: Generate Django Template
 csi-cli {-D --delete}: Delete Current Project
 csi-cli {-r --reset}: Reset All Changes Made to Template
+csi-cli {-u --update}: Updates the csi-cli
 ```

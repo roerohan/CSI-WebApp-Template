@@ -52,6 +52,13 @@ then
         django=1
     fi
 
+#To update the CLI
+elif [[ $1 =~ "--update" ]] || [[ $1 =~ "-u" ]]
+then
+    location=`pwd`
+    cd $CSINodeDir/../..
+    git pull
+    cd location
 #For any other option
 else
     echo "Invalid arguments."
@@ -114,6 +121,7 @@ then
     echo "                         {-d --django}: Generate Django Template"
     echo "  csi-cli {-D --delete}: Delete Current Project"
     echo "  csi-cli {-r --reset}: Reset All Changes Made to Template"
+    echo "  csi-cli {-u --update}: Updates the csi-cli"
     echo
     echo "Note: {x y} implies you can use 'csi-cli x' or 'csi-cli y'"
 fi

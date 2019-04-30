@@ -1,6 +1,8 @@
 #!bin/env bash
 
 cd ~
+if [[ -f .CSI-WebApp-Template ]]
+    sudo rm -rf .CSI-WebApp-Template
 git clone https://github.com/csivitu/CSI-WebApp-Template .CSI-WebApp-Template
 cd .CSI-WebApp-Template/Node/Unix
 export CSINodeDir=`pwd`
