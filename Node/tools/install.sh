@@ -1,7 +1,7 @@
 #!bin/env bash
 
 cd ~
-if [[ -f .CSI-WebApp-Template ]]
+if [[ -d .CSI-WebApp-Template ]]
 then
     sudo rm -rf .CSI-WebApp-Template
 fi
