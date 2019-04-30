@@ -19,7 +19,7 @@ function verifyPassword(password) {
 //Verify if the email is valid
 function verifyEmail(email) {
     const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return (emailRegex.test(val) && val.length <= 254);
+    return (emailRegex.test(email) && email.length <= 254);
 }
 
 //Verify if the mobile is valid
@@ -65,6 +65,7 @@ function addUser(req, res) {
             user.save((err, doc) => {
                 if (!err) {
                     console.log(`User Added Successfully`);
+                    alert("Successfully Registered.")
                 } else {
                     if (err.name === "MongoError" && err.code === 11000) {
                         let field = err.errmsg.split('users index: ')[1];
@@ -109,6 +110,4 @@ router.post('/', (req, res) => {
 //     });
 // });
 
-module.exports = {
-    router
-};
+module.exports = router;

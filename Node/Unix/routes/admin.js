@@ -51,6 +51,11 @@ router.get('/', (req, res) => {
 
 //Add user from admin panel
 router.get('/add', (req, res) => {
+    res.render("user/register");
+});
+
+//Post request
+router.post('/add', (req, res) => {
     add(req, res);
 });
 
