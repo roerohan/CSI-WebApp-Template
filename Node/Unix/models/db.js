@@ -12,5 +12,3 @@ mongoose.connect('mongodb://localhost:27017/UserDB', {
         console.log('Error in DB connection: ' + err)
     }
 });
-
-require('./user.model');

@@ -86,6 +86,7 @@ then
     cat $CSINodeDir/views/user/register.html > views/user/register.hbs
     cat $CSINodeDir/routes/user.js > routes/user.js
     cat $CSINodeDir/routes/admin.js > routes/admin.js
+    cat $CSINodeDir/routes/admin.js > routes/authenticate.js
 
     #Template Created
     if [[ $? -eq 0 ]]

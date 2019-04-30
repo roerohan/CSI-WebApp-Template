@@ -19,7 +19,7 @@ router.post("/adminLogin", function (req, res) {
     const password = req.body.password;
 
     if (username == adminUser && password === adminPass) {
-        req.session.user = true;
+        req.session.admin = true;
         res.redirect("/admin");
     } else {
         res.render("authenticate", {

@@ -9,6 +9,7 @@ const exphbs = require('express-handlebars');
 const bodyparser = require('body-parser');
 
 const path = require('path');
+const session = require('express-session');
 
 const user = require('./routes/user');
 const admin = require('./routes/admin');
