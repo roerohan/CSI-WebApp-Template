@@ -6,7 +6,7 @@ cd .CSI-WebApp-Template/Node/Unix
 export CSINodeDir=`pwd`
 cat generate.sh > csi-cli
 chmod +x csi-cli
-sudo cp csi-cli /bin/
+sudo cp csi-cli /usr/bin/
 rm csi-cli
 
 echo "Installation Complete."
