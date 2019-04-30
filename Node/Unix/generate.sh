@@ -3,7 +3,7 @@
 node=0
 django=0
 
-CSINodeDir=`~/.CSI-WebApp-Template/Node/Unix`
+CSINodeDir="~/.CSI-WebApp-Template/Node/Unix"
 
 #If operation is generate or gen
 if [[ $1 =~ "generate" ]] || [[ $1 =~ "gen" ]]
