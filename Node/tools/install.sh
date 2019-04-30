@@ -2,6 +2,7 @@
 
 cd ~
 if [[ -f .CSI-WebApp-Template ]]
+then
     sudo rm -rf .CSI-WebApp-Template
 fi
 git clone https://github.com/csivitu/CSI-WebApp-Template .CSI-WebApp-Template
