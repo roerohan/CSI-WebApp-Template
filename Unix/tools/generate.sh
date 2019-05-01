@@ -50,7 +50,7 @@ then
         then
             ls -a | grep $2 && rm -rf $2 || echo "'$2' not found."
         else
-            "Project to be deleted not specified."
+            echo "Project to be deleted not specified."
             exit 1
         fi
     else
@@ -110,6 +110,7 @@ then
     chmod +x csi-cli
     sudo cp csi-cli /usr/bin/
     rm csi-cli
+    echo "Done."
 #For any other option
 else
     echo "Invalid arguments."
@@ -206,10 +207,16 @@ then
             fi
         fi
 
+        mkdir $app_name/templates $app_name/templates/$app_name
         touch $app_name/urls.py
 
         cat $CSIUnixDir/Django/django_project/django_project/settings.py > $project_name/settings.py
         cat $CSIUnixDir/Django/django_project/django_project/urls.py > $project_name/urls.py
+        cat $CSIUnixDir/Django/django_project/django_app/views.py > $app_name/views.py
+        cat $CSIUnixDir/Django/django_project/django_app/urls.py > $app_name/urls.py
+
+        cp -r $CSIUnixDir/Django/django_project/django_app/static $app_name/
+        cp $CSIUnixDir/Django/django_project/django_app/templates/django_app/*.html $app_name/templates/$app_name/
 
         sed -i "s/django_app/$app_name/g" $project_name/*.py #Replace all instances of django_app in $project_name/*.py
 
