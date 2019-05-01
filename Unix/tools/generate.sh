@@ -101,6 +101,15 @@ elif [[ $1 =~ "--update" ]] || [[ $1 =~ "-u" ]]
 then
     cd $CSIUnixDir
     git pull
+    if [[ -f /usr/bin/csi-cli ]]
+    then
+        sudo rm /usr/bin/csi-cli
+    fi
+    cd tools
+    cat generate.sh > csi-cli
+    chmod +x csi-cli
+    sudo cp csi-cli /usr/bin/
+    rm csi-cli
 #For any other option
 else
     echo "Invalid arguments."
