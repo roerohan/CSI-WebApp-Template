@@ -78,9 +78,9 @@ fi
 if [[ $node -eq 1 ]]
 then
 
-    echo "Set up package.json for your project through npm..."
-    npm init
-    npm install --save express express-handlebars mongoose body-parser express-session bcrypt
+    # echo "Set up package.json for your project through npm..."
+    # npm init
+    # npm install --save express express-handlebars mongoose body-parser express-session bcrypt
     echo "Making directories..."
 
     #Making the directories in the following line
