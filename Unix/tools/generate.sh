@@ -99,9 +99,6 @@ fi
 #To create a Node-js project
 if [[ $node -eq 1 ]]
 then
-    echo "Making directories..."
-
-
     if [[ -z "$project_name" ]]
     then
         echo "Missing project name."
@@ -109,6 +106,7 @@ then
         project_name="NodeProject"
     fi
 
+    echo "Making directories..."
     mkdir $project_name
     cd $project_name
 
@@ -141,7 +139,41 @@ fi
 #To create a Django project
 if [[ $django -eq 1 ]]
 then
-    echo "Work in Progress."
+    if [[ -z "$project_name" ]]
+    then
+        echo "Missing project name."
+        echo "Creating project named django_project"
+        project_name="django_project"
+    fi
+    echo "Making directories..."
+
+    #Calls django-admin to start project creation
+    django-admin startproject $project_name
+
+    if [[ $? -eq 0 ]]
+    then
+        cd $project_name
+        read -p "Enter the app name: " -r
+        app_name=$REPLY
+        django-admin startapp $app_name
+        
+    else
+        echo "Django is not installed or is not added to PATH on your computer, or your project name is invalid."
+        read -p "Do you want to install it? (y/N): " -n 1 -r
+        echo
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            pip install django
+            if [[ $? -eq 0 ]]
+            then
+                echo "Python or pip is not installed on your computer, or is not added to path. Try again after configuring pip."
+                exit 1
+            fi
+        else
+            echo "No files were created."
+            exit 1
+        fi
+    fi
 fi
 
 #Help Menu
