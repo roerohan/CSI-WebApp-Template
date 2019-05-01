@@ -84,24 +84,18 @@ then
     echo "Making directories..."
 
     #Making the directories in the following line
-    mkdir routes models config partials views views/layouts views/admin views/user static static/images static/fonts static/css static/js
+    mkdir config partials static static/images static/fonts static/css static/js
 
     #Making the files in the following lines
-    touch server.js models/db.js models/user.model.js views/layouts/mainLayout.hbs views/admin/authenticate.hbs views/admin/viewUsers.hbs views/user/register.hbs routes/user.js routes/admin.js routes/authenticate.js
+    touch server.js
 
     echo "Copying files ..."
 
     #Copying files to the directory
     cat $CSIUnixDir/Node/server.js > server.js
-    cat $CSIUnixDir/Node/models/db.js > models/db.js
-    cat $CSIUnixDir/Node/models/user.model.js > models/user.model.js
-    cat $CSIUnixDir/Node/views/layouts/mainLayout.html > views/layouts/mainLayout.hbs
-    cat $CSIUnixDir/Node/views/admin/authenticate.html > views/admin/authenticate.hbs
-    cat $CSIUnixDir/Node/views/admin/viewUsers.html > views/admin/viewUsers.hbs
-    cat $CSIUnixDir/Node/views/user/register.html > views/user/register.hbs
-    cat $CSIUnixDir/Node/routes/user.js > routes/user.js
-    cat $CSIUnixDir/Node/routes/admin.js > routes/admin.js
-    cat $CSIUnixDir/Node/routes/authenticate.js > routes/authenticate.js
+    cp $CSIUnixDir/Node/models models
+    cp $CSIUnixDir/Node/routes routes
+    cp $CSIUnixDir/Node/views views
 
     #Template Created
     if [[ $? -eq 0 ]]
