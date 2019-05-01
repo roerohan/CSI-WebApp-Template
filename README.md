@@ -23,7 +23,7 @@ The CSI-WebApp-Template CLI can be installed for both Windows and Unix-based Ope
 ### For Unix-Based OS
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/csivitu/CSI-WebApp-Template/master/Node/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/csivitu/CSI-WebApp-Template/master/Unix/tools/install.sh)"
 ```
 #### OR
 ```bash
