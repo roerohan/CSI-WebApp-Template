@@ -61,29 +61,41 @@ then
 #If the operation is --reset or -r
 elif [[ $1 =~ "--reset" ]] || [[ $1 == "-r" ]]
 then
-    read -p "Are you sure? (y/N): " -n 1 -r
+    echo
+    read -p "This will delete the current directory. Are you sure you are in the right directory? (y/N): " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        ls | grep server.js #Check if Node project
-
-        if [[ $? -eq 0 ]]
+        delete_dir="$(basename "$PWD")"
+        if [[ -f server.js ]]
         then
-            rm -rf routes models config partials views static server.js package.json package-lock.json node_modules
+            cd ..
+            rm -r $delete_dir
             echo "Rebuilding Node Template... "
             node=1
-        fi
-
-        ls | grep manage.py #Check if Django project
-
-        if [[ $? -eq 0 ]]
+        elif [[ -f manage.py ]]
         then
-            rm -rf * #TODO
+            cd ..
+            rm -r $delete_dir
+
+            if [[ -d "venv" ]]
+            then
+                echo
+                read -p "Do you also want to remove the venv directory in `pwd` (y/N): " -n 1 -r
+                echo
+                if [[ $REPLY =~ ^[Yy]$ ]]
+                then
+                    rm -r venv
+                fi
+            fi
             echo "Rebuilding Django Template... "
             django=1
+        else
+            echo
+            echo "Unable to determine wheter it is a Django or a Node project. Delete using 'csi-cli -D' and re-create your project."
         fi
     fi
-
+    
 #To update the CLI
 elif [[ $1 =~ "--update" ]] || [[ $1 =~ "-u" ]]
 then
@@ -147,24 +159,54 @@ then
     fi
     echo "Making directories..."
 
+    echo "Not creating a virtual environment might cause problems later."
+    read -p "Do you want to create a virtual environment? (y/N): " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        virtualenv venv
+        if [[ $? -ne 0 ]]
+        then
+            echo "Python or pip is not installed on your computer, or is not added to PATH. Try again after configuring pip."
+            exit 1
+        fi
+        echo "Remember to execute: "
+        echo "  source venv/bin/activate"
+        echo "everytime before you run your web-app."
+    fi
+
     #Calls django-admin to start project creation
     django-admin startproject $project_name
 
     if [[ $? -eq 0 ]]
     then
         cd $project_name
+        app_name="django_app"
         read -p "Enter the app name: " -r
         app_name=$REPLY
         django-admin startapp $app_name
-        
+        if [[ $? -ne 0 ]]
+        then
+            read -p "Do you want to restart project creation? (y/N): " -n 1 -r
+            echo
+            if [[ $REPLY =~ ^[Yy]$ ]]
+            then
+                csi-cli --reset
+            else
+                exit 1
+            fi
+        fi
+
+        touch $app_name/urls.py
+
     else
         echo "Django is not installed or is not added to PATH on your computer, or your project name is invalid."
-        read -p "Do you want to install it? (y/N): " -n 1 -r
+        read -p "Do you want to install django? (y/N): " -n 1 -r
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]
         then
             pip install django
-            if [[ $? -eq 0 ]]
+            if [[ $? -ne 0 ]]
             then
                 echo "Python or pip is not installed on your computer, or is not added to path. Try again after configuring pip."
                 exit 1
