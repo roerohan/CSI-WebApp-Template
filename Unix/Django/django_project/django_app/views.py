@@ -22,18 +22,18 @@ def login_user(request):
                 return HttpResponseRedirect("/")
         else:
             messages.warning(request, "Invalid Credentials!")
-    return render(request, "core/login.html")
+    return render(request, "django_app/login_page.html")
 
 
 @login_required
 def dashboard(request):
-    return render(request, "core/in.html")
+    return render(request, "django_app/dashboard.html")
 
 
 def logout(
     request,
     next_page=None,
-    template_name="core/login.html",
+    template_name="django_app/login_page.html",
     redirect_field_name=REDIRECT_FIELD_NAME,
     current_app=None,
     extra_context=None,
@@ -43,14 +43,14 @@ def logout(
 
 
 def logout_then_login(
-    request, login_url="core/in.html", current_app=None, extra_context=None
+    request, login_url="django_app/dashboard.html", current_app=None, extra_context=None
 ):
     """
     Logs out the user if they are logged in. Then redirects to the log-in page.
     """
     if not login_url:
         login_url = settings.LOGIN_URL
-    login_url = resolve_url("core/in.html")
+    login_url = resolve_url("django_app/dashboard.html")
     return logout(
         request, login_url, current_app=current_app, extra_context=extra_context
     )
