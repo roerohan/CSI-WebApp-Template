@@ -58,9 +58,9 @@ Run the command: csi-cli gen -n OR csi-cli gen -d
 ```bash
 csi-cli {-h --help}: Help
 csi-cli {-v --version}: Version
-csi-cli {gen generate} {-n --node} <project-name>: Generate Node-js Template
-                       {-d --django} <project-name>: Generate Django Template
-csi-cli {-D --delete} <project-name>: Delete Project
+csi-cli {gen generate} {-n --node} your-project-name: Generate Node-js Template
+                       {-d --django} your-project-name: Generate Django Template
+csi-cli {-D --delete} your-project-name: Delete Project
 csi-cli {-r --reset}: Reset All Changes Made to Template
 csi-cli {-u --update}: Updates the csi-cli
 ```

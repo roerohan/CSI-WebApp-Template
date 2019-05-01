@@ -150,9 +150,9 @@ then
     echo "operations:"
     echo
     echo "  csi-cli {-h --help}: Help"
-    echo "  csi-cli {gen generate} {-n --node} <project-name>: Generate Node-js Template"
-    echo "                         {-d --django} <project-name>: Generate Django Template"
-    echo "  csi-cli {-D --delete} <project-name>: Delete Project"
+    echo "  csi-cli {gen generate} {-n --node} your-project-name: Generate Node-js Template"
+    echo "                         {-d --django} your-project-name: Generate Django Template"
+    echo "  csi-cli {-D --delete} your-project-name: Delete Project"
     echo "  csi-cli {-r --reset}: Reset All Changes Made to Template"
     echo "  csi-cli {-u --update}: Updates the csi-cli"
     echo
