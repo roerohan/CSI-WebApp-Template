@@ -60,7 +60,8 @@ csi-cli {-h --help}: Help
 csi-cli {-v --version}: Version
 csi-cli {gen generate} {-n --node} <project-name>: Generate Node-js Template
                        {-d --django} <project-name>: Generate Django Template
-csi-cli {-D --delete} <project-name>: Delete Current Project
+csi-cli {-D --delete} <project-name>: Delete Project
 csi-cli {-r --reset}: Reset All Changes Made to Template
 csi-cli {-u --update}: Updates the csi-cli
 ```
+In absence of project-name, csi-cli assumes you are in the project directory.
