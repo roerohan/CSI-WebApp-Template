@@ -50,7 +50,8 @@ then
         then
             ls -a | grep $2 && rm -rf $2 || echo "'$2' not found."
         else
-            rm -rf routes models config partials views static server.js package.json package-lock.json node_modules
+            "Project to be deleted not specified."
+            exit 1
         fi
     else
         echo "No files were deleted."
@@ -60,22 +61,27 @@ then
 #If the operation is --reset or -r
 elif [[ $1 =~ "--reset" ]] || [[ $1 == "-r" ]]
 then
-    ls | grep server.js #Check if Node project
-
-    if [[ $? -eq 0 ]]
+    read -p "Are you sure? (y/N): " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        sudo rm -rf routes models config partials views static server.js package.json package-lock.json node_modules
-        echo "Rebuilding Node Template... "
-        node=1
-    fi
+        ls | grep server.js #Check if Node project
 
-    ls | grep manage.py #Check if Django project
+        if [[ $? -eq 0 ]]
+        then
+            rm -rf routes models config partials views static server.js package.json package-lock.json node_modules
+            echo "Rebuilding Node Template... "
+            node=1
+        fi
 
-    if [[ $? -eq 0 ]]
-    then
-        sudo rm -rf * #TODO
-        echo "Rebuilding Django Template... "
-        django=1
+        ls | grep manage.py #Check if Django project
+
+        if [[ $? -eq 0 ]]
+        then
+            rm -rf * #TODO
+            echo "Rebuilding Django Template... "
+            django=1
+        fi
     fi
 
 #To update the CLI
@@ -152,5 +158,5 @@ then
     echo "  csi-cli {-u --update}: Updates the csi-cli"
     echo
     echo "Note: {x y} implies you can use 'csi-cli x' or 'csi-cli y'"
-    echo "If <project-name> is empty, csi-cli assumes you are inside the directory."
+    echo "If 'project-name' is empty, csi-cli assumes you are inside the directory."
 fi
