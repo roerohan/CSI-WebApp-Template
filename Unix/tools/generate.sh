@@ -219,6 +219,7 @@ then
         cp $CSIUnixDir/Django/django_project/django_app/templates/django_app/*.html $app_name/templates/$app_name/
 
         sed -i "s/django_app/$app_name/g" $project_name/*.py #Replace all instances of django_app in $project_name/*.py
+        sed -i "s/django_project/$project_name/g" $project_name/*.py #Replace all instances of django_app in $project_name/*.py
 
 
 
