@@ -95,7 +95,7 @@ then
             echo "Unable to determine wheter it is a Django or a Node project. Delete using 'csi-cli -D' and re-create your project."
         fi
     fi
-    
+
 #To update the CLI
 elif [[ $1 =~ "--update" ]] || [[ $1 =~ "-u" ]]
 then
@@ -198,6 +198,14 @@ then
         fi
 
         touch $app_name/urls.py
+
+        cat $CSIUnixDir/Django/django_project/django_project/settings.py > $project_name/settings.py
+        cat $CSIUnixDir/Django/django_project/django_project/urls.py > $project_name/urls.py
+
+        sed -i "s/django_app/$app_name/g" $project_name/*.py #Replace all instances of django_app in $project_name/*.py
+
+
+
 
     else
         echo "Django is not installed or is not added to PATH on your computer, or your project name is invalid."
