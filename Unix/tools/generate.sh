@@ -150,11 +150,12 @@ then
     echo "operations:"
     echo
     echo "  csi-cli {-h --help}: Help"
-    echo "  csi-cli {gen generate} {-n --node}: Generate Node-js Template"
-    echo "                         {-d --django}: Generate Django Template"
-    echo "  csi-cli {-D --delete}: Delete Current Project"
+    echo "  csi-cli {gen generate} {-n --node} <project-name>: Generate Node-js Template"
+    echo "                         {-d --django} <project-name>: Generate Django Template"
+    echo "  csi-cli {-D --delete} <project-name>: Delete Project"
     echo "  csi-cli {-r --reset}: Reset All Changes Made to Template"
     echo "  csi-cli {-u --update}: Updates the csi-cli"
     echo
     echo "Note: {x y} implies you can use 'csi-cli x' or 'csi-cli y'"
+    echo "If <project-name> is empty, csi-cli assumes you are inside the directory."
 fi
