@@ -93,10 +93,6 @@ fi
 #To create a Node-js project
 if [[ $node -eq 1 ]]
 then
-
-    # echo "Set up package.json for your project through npm..."
-    # npm init
-    # npm install --save express express-handlebars mongoose body-parser express-session bcrypt
     echo "Making directories..."
 
 
@@ -117,10 +113,9 @@ then
     touch server.js
 
     echo "Copying files ..."
-
+    npm init
     #Copying files to the directory
     cat $CSIUnixDir/Node/server.js > server.js
-    cat $CSIUnixDir/Node/package.json > package.json
     cat $CSIUnixDir/Node/package-lock.json > package-lock.json
 
     cp -r $CSIUnixDir/Node/models models
