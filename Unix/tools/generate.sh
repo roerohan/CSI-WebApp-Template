@@ -3,7 +3,7 @@
 node=0
 django=0
 
-CSINodeDir=~/.CSI-WebApp-Template/Node/Unix
+CSIUnixDir=~/.CSI-WebApp-Template/Unix
 
 #If operation is generate or gen
 if [[ $1 =~ "generate" ]] || [[ $1 =~ "gen" ]]
@@ -63,7 +63,7 @@ then
 elif [[ $1 =~ "--update" ]] || [[ $1 =~ "-u" ]]
 then
     location=`pwd`
-    cd $CSINodeDir
+    cd $CSIUnixDir
     cd ../..
     git pull
     cd $location
@@ -92,23 +92,23 @@ then
     echo "Copying files ..."
 
     #Copying files to the directory
-    cat $CSINodeDir/server.js > server.js
-    cat $CSINodeDir/models/db.js > models/db.js
-    cat $CSINodeDir/models/user.model.js > models/user.model.js
-    cat $CSINodeDir/views/layouts/mainLayout.html > views/layouts/mainLayout.hbs
-    cat $CSINodeDir/views/admin/authenticate.html > views/admin/authenticate.hbs
-    cat $CSINodeDir/views/admin/viewUsers.html > views/admin/viewUsers.hbs
-    cat $CSINodeDir/views/user/register.html > views/user/register.hbs
-    cat $CSINodeDir/routes/user.js > routes/user.js
-    cat $CSINodeDir/routes/admin.js > routes/admin.js
-    cat $CSINodeDir/routes/authenticate.js > routes/authenticate.js
+    cat $CSIUnixDir/Node/server.js > server.js
+    cat $CSIUnixDir/Node/models/db.js > models/db.js
+    cat $CSIUnixDir/Node/models/user.model.js > models/user.model.js
+    cat $CSIUnixDir/Node/views/layouts/mainLayout.html > views/layouts/mainLayout.hbs
+    cat $CSIUnixDir/Node/views/admin/authenticate.html > views/admin/authenticate.hbs
+    cat $CSIUnixDir/Node/views/admin/viewUsers.html > views/admin/viewUsers.hbs
+    cat $CSIUnixDir/Node/views/user/register.html > views/user/register.hbs
+    cat $CSIUnixDir/Node/routes/user.js > routes/user.js
+    cat $CSIUnixDir/Node/routes/admin.js > routes/admin.js
+    cat $CSIUnixDir/Node/routes/authenticate.js > routes/authenticate.js
 
     #Template Created
     if [[ $? -eq 0 ]]
     then
         echo "Complete. Node Template was created successfully."
     else
-        echo "Error in file creation. Note that CSINodeDir must be set to path/to/directory/.CSI-WebApp-Template/Node/Unix"
+        echo "Error in file creation. Note that CSIUnixDir must be set to path/to/directory/.CSI-WebApp-Template/Node/Unix"
     fi
 fi
 
