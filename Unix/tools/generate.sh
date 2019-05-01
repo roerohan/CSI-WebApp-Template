@@ -8,6 +8,12 @@ CSIUnixDir=~/.CSI-WebApp-Template/Unix
 #If operation is generate or gen
 if [[ $1 =~ "generate" ]] || [[ $1 =~ "gen" ]]
 then
+    if [[ $# -gt 3 ]]
+    then
+        echo "Too many arguments!"
+        exit 1
+    fi
+    project_name=$3
     #If option is --node or -n
     if [[ $2 =~ "--node" ]] || [[ $2 =~ "-n" ]]
     then
@@ -36,7 +42,20 @@ then
 #If the operation is --delete or -D
 elif [[ $1 =~ "--delete" ]] || [[ $1 =~ "-D" ]]
 then
-    sudo rm -rf routes models config partials views static server.js package.json package-lock.json node_modules
+    read -p "Are you sure? (y/N): " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        if [[ ! -z "$2" ]]
+        then
+            ls -a | grep $2 && rm -rf $2 || echo "'$2' not found."
+        else
+            rm -rf routes models config partials views static server.js package.json package-lock.json node_modules
+        fi
+    else
+        echo "No files were deleted."
+        exit 1
+    fi
 
 #If the operation is --reset or -r
 elif [[ $1 =~ "--reset" ]] || [[ $1 == "-r" ]]
@@ -62,10 +81,8 @@ then
 #To update the CLI
 elif [[ $1 =~ "--update" ]] || [[ $1 =~ "-u" ]]
 then
-    location=`pwd`
     cd $CSIUnixDir
     git pull
-    cd $location
 #For any other option
 else
     echo "Invalid arguments."
@@ -82,6 +99,17 @@ then
     # npm install --save express express-handlebars mongoose body-parser express-session bcrypt
     echo "Making directories..."
 
+
+    if [[ -z "$project_name" ]]
+    then
+        echo "Missing project name."
+        echo "Creating project named NodeProject"
+        project_name="NodeProject"
+    fi
+
+    mkdir $project_name
+    cd $project_name
+
     #Making the directories in the following line
     mkdir config partials static static/images static/fonts static/css static/js
 
@@ -92,16 +120,20 @@ then
 
     #Copying files to the directory
     cat $CSIUnixDir/Node/server.js > server.js
-    cp $CSIUnixDir/Node/models models
-    cp $CSIUnixDir/Node/routes routes
-    cp $CSIUnixDir/Node/views views
+    cat $CSIUnixDir/Node/package.json > package.json
+    cat $CSIUnixDir/Node/package-lock.json > package-lock.json
+
+    cp -r $CSIUnixDir/Node/models models
+    cp -r $CSIUnixDir/Node/views views
+    cp -r $CSIUnixDir/Node/node_modules node_modules
+    cp -r $CSIUnixDir/Node/routes routes
 
     #Template Created
     if [[ $? -eq 0 ]]
     then
         echo "Complete. Node Template was created successfully."
     else
-        echo "Error in file creation. Note that CSIUnixDir must be set to path/to/directory/.CSI-WebApp-Template/Node/Unix"
+        echo "Error in file creation. Note that CSIUnixDir must be set to path/to/directory/.CSI-WebApp-Template/Unix"
     fi
 fi
 

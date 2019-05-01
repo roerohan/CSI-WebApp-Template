@@ -1,6 +1,5 @@
 #!bin/env bash
 
-location=`pwd`
 cd ~
 if [[ -d .CSI-WebApp-Template ]]
 then
@@ -18,5 +17,4 @@ cat generate.sh > csi-cli
 chmod +x csi-cli
 sudo cp csi-cli /usr/bin/
 rm csi-cli
-cd $location
 echo "Installation Complete."
