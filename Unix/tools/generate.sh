@@ -225,6 +225,10 @@ then
 
         python manage.py makemigrations
         python manage.py migrate
+        echo
+        echo "Create an admin account here: "
+        python manage.py createsuperuser
+        echo "Complete. Django Template was created successfully."
 
     else
         echo "Django is not installed or is not added to PATH on your computer, or your project name is invalid."
