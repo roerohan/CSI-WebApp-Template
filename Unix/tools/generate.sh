@@ -223,6 +223,8 @@ then
         sed -i "s/django_app/$app_name/g" $app_name/*.py #Replace all instances of django_app in $app_name/templates/$app_name/*.html
         sed -i "s/django_project/$project_name/g" $project_name/*.py #Replace all instances of django_project in $project_name/*.py
 
+        python manage.py makemigrations
+        python manage.py migrate
 
     else
         echo "Django is not installed or is not added to PATH on your computer, or your project name is invalid."
