@@ -51,7 +51,7 @@ Django: Do - pip install django
 
 ```
 Create a directory having the name of the Project
-Run the command: csi-cli gen -n OR csi-cli gen -d
+Run the command: csi-cli gen -n projectname OR csi-cli gen -d projectname
 ```
 
 #### The following are the commands that our CLI supports.
