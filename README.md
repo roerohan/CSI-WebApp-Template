@@ -28,8 +28,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/csivitu/CSI-WebApp-Templat
 #### OR
 ```bash
 git clone https://github.com/csivitu/CSI-WebApp-Template.git
-cd CSI-WebApp-Template
-./install.sh
+cd .CSI-WebApp-Template
+./Unix/tools/install.sh
 #TODO
 ```
 
