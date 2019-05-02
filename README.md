@@ -5,10 +5,10 @@ The CSI-WebApp-Template is a CLI tool which helps you generate a Node-js or Djan
     Connect to Database
     Basic User Model
     Add User (with hashed password)
+    User Login/Logout
+    Admin Login/Logout
     Admin Panel - Add, Update, Delete User
     Authentication with Sessions
-    Admin Login/Logout
-    User Login/Logout
 
 ## Installation
 
