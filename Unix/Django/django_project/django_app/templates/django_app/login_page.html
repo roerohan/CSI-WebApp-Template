@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login-Page</title>
 </head>
+
 <body>
-    <h1>Log in here.</h1>
+    <h1>Log in</h1>
+    <div class="section-right col-12 col-lg-6 xapp-column">
+        <div class="background-blues">
+            <div class="card card-login text-center">
+                <div class="card-body">
+                    <h3 class="card-title">Authenticate Yourself</h3>
+                    <form name="LoginForm" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group form-group--full-width">
+                            <input name="username" class="form-control" type="text" placeholder="Username">
+                        </div>
+                        <div class="form-group form-group--full-width">
+                            <input name="password" class="form-control" type="password" placeholder="Password">
+                        </div>
+
+                        <div class="form-group mt-5">
+                            <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+                        </div>
+                        {% if messages %}
+                        <!--{% for message in messages %}
+                            <div class="{{ message.tags }}">-->
+                        <strong>Invalid username or password</strong>
+                        <!--{% endfor %}-->
+                        {% endif %}
+
+                    </form>
+                    <div class="card-link">
+                        <a href="javascript:alert('Under Construction');">Forgot Password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
