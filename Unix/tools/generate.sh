@@ -133,7 +133,7 @@ then
     cd $project_name
 
     #Making the directories in the following line
-    mkdir config partials
+    mkdir config
 
     #Making the files in the following lines
     touch server.js

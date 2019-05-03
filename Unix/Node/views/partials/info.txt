@@ -1,0 +1,2 @@
+Add partials here for templating (reusability).
+E.G.: Navbars

@@ -8,8 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="/static/css/user/style.css">
     <title>Login-Page</title>
 </head>
 
@@ -37,27 +36,23 @@
                         <div class="card-body">
                             <h3 class="card-title">Authenticate Yourself</h3>
                             <form name="LoginForm" method="POST">
-                                {% csrf_token %}
-                                    <div class="form-group form-group--full-width">
-                                        <input name="username" class="form-control" type="text" placeholder="Username">
-                                    </div>
-                                    <div class="form-group form-group--full-width">
-                                        <input name="password" class="form-control" type="password" placeholder="Password">
-                                    </div>
+                                <div class="form-group form-group--full-width">
+                                    <input name="username" class="form-control" type="text" placeholder="Username">
+                                </div>
+                                <div class="form-group form-group--full-width">
+                                    <input name="password" class="form-control" type="password" placeholder="Password">
+                                </div>
 
-                                    <div class="form-group mt-5">
-                                        <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
-                                    </div>
-                                    {% if messages %}
-                                    <!--{% for message in messages %}
-                                    <div class="{{ message.tags }}">-->
-                                        <strong>Invalid username or password</strong>
-                                        <!--{% endfor %}-->
-                                    {% endif %}
+                                <div class="form-group mt-5">
+                                    <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+                                </div>
+                                {{#if messages}}
+                                <strong>Invalid username or password</strong>
+                                {{/if}}
 
                             </form>
                             <div class="card-link">
-                                <a href="javascript:alert('You dumbass. Message Rohan / Kuhoo and they\'ll reset your password for you.');">Forgot Password?</a>
+                                <a href="javascript:alert('Under Construction.');">Forgot Password?</a>
                             </div>
                         </div>
                     </div>
