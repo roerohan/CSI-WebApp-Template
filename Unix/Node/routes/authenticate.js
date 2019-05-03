@@ -4,9 +4,13 @@
 var express = require('express');
 var router = express.Router();
 
-//Set admin user-name and admin-password
+//Set admin user-name and admin-password (Protect admin panel with recaptcha for security)
 const adminUser = "**Enter Admin Username Here**"; //Enter admin username
 const adminPass = "**Enter Admin Password Here**"; //Enter admin password
+
+//Import the User model
+var User = require('../models/user.model');
+var bcrypt = require('bcrypt');
 
 //GET request at /auth/adminLogin
 router.get("/adminLogin", function (req, res) {
@@ -50,21 +54,32 @@ router.post("/login", function (req, res) {
     } else {
         User.findOne({
             "name": username,
-        }).then((docu) => {
-            if (!docu) {
-                res.send("Incorrect")
+        }).then((doc) => {
+            if (!doc) {
+                res.render("user/loginPage", {
+                    messages:true //Sample templating with hbs
+                });
             } else{
                 bcrypt.compare(password, doc.password, (err, result) => {
                     if (result === true) {
                         req.session.user = username;
                         res.redirect("/");
                     } else {
-                        res.send('Incorrect');
+                        res.render("user/loginPage", {
+                            messages:true //Sample templating with hbs
+                        });
                     }
                 });
             }
         });
     }
+});
+
+//GET request at /auth/logout
+router.get("/logout", function (req, res, next) {
+    req.session.destroy(function () {
+        res.redirect("/");
+    });
 });
 
 module.exports = router;
