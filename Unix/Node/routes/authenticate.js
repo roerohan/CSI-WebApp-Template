@@ -35,4 +35,36 @@ router.get("/adminLogout", function (req, res, next) {
     });
 });
 
+//GET request at /auth/login
+router.get("/login", (req, res) => {
+    res.render("user/loginPage");
+});
+
+//POST request at /auth/login
+
+router.post("/login", function (req, res) {
+    const username = req.body.username.toString().trim();
+    const password = req.body.password.toString().trim();
+    if (username.length > 20 || password.length > 16) {
+        res.send("Too large");
+    } else {
+        User.findOne({
+            "name": username,
+        }).then((docu) => {
+            if (!docu) {
+                res.send("Incorrect")
+            } else{
+                bcrypt.compare(password, doc.password, (err, result) => {
+                    if (result === true) {
+                        req.session.user = username;
+                        res.redirect("/");
+                    } else {
+                        res.send('Incorrect');
+                    }
+                });
+            }
+        });
+    }
+});
+
 module.exports = router;

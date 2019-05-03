@@ -16,12 +16,6 @@ body {
     margin-left: 0px;
 }
 
-.xapp-column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .container-fluid {
     height: 100vh;
     padding: 0;
@@ -32,52 +26,6 @@ h1 {
     font-weight: bold;
 }
 
-/* Left of page */
-/* Bars */
-.bars {
-    position: absolute;
-    top: 0;
-    left: 15vw;
-    /* For hover size changing; Without this it is hidden under the div due to position absolute */
-    z-index:1;
-    /* Hidden on mobile */
-    display: none;
-}
-
-.bars>div {
-    width: 1.5rem;
-    margin-right: 1rem;
-
-    background-image: linear-gradient(to bottom, #0099ff, #6666ff);
-    border-radius: 0 0 0.75rem 0.75rem;
-    transition: height .35s ease-in-out;
-}
-
-.bars :nth-child(1) {
-    height: 15vh;
-}
-
-.bars :nth-child(2) {
-    height: 17vh;
-}
-
-.bars :nth-child(3) {
-    height: 12vh;
-}
-
-.bars :nth-child(1):hover {
-    height: 20vh;
-}
-
-.bars :nth-child(2):hover {
-    height: 22vh;
-}
-
-.bars :nth-child(3):hover {
-    height: 17vh;
-}
-
-/* Right of page */
 .section-right {
     padding-right: 0;
 }
@@ -131,14 +79,6 @@ input:hover {
 }
 
 @media (min-width: 576px) {
-    .bars {
-        display: flex;
-        justify-content: center;
-    }
-
-    .branding {
-        text-align: left;
-    }
 
     .background-blues {
         height: 80%;

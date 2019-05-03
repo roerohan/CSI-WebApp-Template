@@ -83,11 +83,21 @@ function addUser(req, res) {
 
 //GET request at '/'
 router.get('/', (req, res) => {
+    if (!req.session.user) {
+        res.redirect('/auth/login');
+    } else {
+        res.render("user/dashboard", {});
+    }
+});
+
+
+//GET request at '/register'
+router.get('/register', (req, res) => {
     res.render("user/register", {});
 });
 
-//POST request at '/'
-router.post('/', (req, res) => {
+//POST request at '/register'
+router.post('/register', (req, res) => {
     addUser(req, res);
 });
 
