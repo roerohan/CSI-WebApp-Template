@@ -48,7 +48,7 @@ then
     then
         if [[ ! -z "$2" ]]
         then
-            ls -a | grep $2 && rm -rf $2 || echo "'$2' not found."
+            [[ -d "$2" ]] || [[ -f "$2" ]] && rm -rf $2 || echo "'$2' not found."
         else
             echo "Project to be deleted not specified."
             exit 1
