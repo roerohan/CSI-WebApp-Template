@@ -48,7 +48,7 @@ then
     then
         if [[ ! -z "$2" ]]
         then
-            ls -a | grep $2 && rm -rf $2 || echo "'$2' not found."
+            [[ -d "$2" ]] || [[ -f "$2" ]] && rm -rf $2 || echo "'$2' not found."
         else
             echo "Project to be deleted not specified."
             exit 1
@@ -101,14 +101,14 @@ elif [[ $1 =~ "--update" ]] || [[ $1 =~ "-u" ]]
 then
     cd $CSIUnixDir
     git pull
-    if [[ -f /usr/local/bin/csi-cli ]]
+    if [[ -f ~/.local/bin/csi-cli ]]
     then
-        sudo rm /usr/local/bin/csi-cli
+        rm ~/.local/bin/csi-cli
     fi
     cd tools
     cat generate.sh > csi-cli
     chmod +x csi-cli
-    sudo cp csi-cli /usr/local/bin/
+    cp csi-cli ~/.local/bin/
     rm csi-cli
     echo "Done."
 #For any other option
@@ -133,7 +133,7 @@ then
     cd $project_name
 
     #Making the directories in the following line
-    mkdir config partials static static/images static/fonts static/css static/js
+    mkdir config partials
 
     #Making the files in the following lines
     touch server.js
@@ -146,6 +146,7 @@ then
 
     cp -r $CSIUnixDir/Node/models models
     cp -r $CSIUnixDir/Node/views views
+    cp -r $CSIUnixDir/Node/static static
     cp -r $CSIUnixDir/Node/node_modules node_modules
     cp -r $CSIUnixDir/Node/routes routes
 

@@ -12,8 +12,8 @@
 
 <body>
     <h3 style="text-align: center; margin-top:15px;">Users</h3>
-    <div style="text-align:center"><a class="btn btn-secondary" href="/auth/adminLogout" style="margin-top:15px">Log
-            Out</a></div>
+    <div style="text-align:center"><a class="btn btn-secondary" href="/auth/adminLogout" style="margin-top:15px">Log Out</a></div>
+    <div style="text-align:center"><a class="btn btn-secondary" href="/admin/add" style="margin-top:15px">Add User</a></div>
     <p style="text-align: center; margin-top:15px">To refresh list, just reload this page.</p>
     <p style="text-align: center; margin-top:15px; font-size:50px">No. of Entries: <strong>{{count}}</strong>
     </p>
@@ -22,7 +22,7 @@
             <tr>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Phone</th>
+                <th>Mobile</th>
                 <th>Delete?</th>
             </tr>
         </thead>
@@ -31,9 +31,9 @@
             <tr>
                 <td>{{this.name}}</td>
                 <td>{{this.email}}</td>
-                <td>{{this.phone}}</td>
+                <td>{{this.mobile}}</td>
                 <td>
-                    <a onclick="confirmDelete(this, event)" data-name="{{this.fullName}}" data-id="{{this.id}}"
+                    <a onclick="confirmDelete(this, event)" data-name="{{this.name}}" data-id="{{this.id}}"
                         href="#">Delete</a>
                 </td>
             </tr>
