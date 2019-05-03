@@ -133,7 +133,7 @@ then
     cd $project_name
 
     #Making the directories in the following line
-    mkdir config partials static static/images static/fonts static/css static/js
+    mkdir config partials
 
     #Making the files in the following lines
     touch server.js
@@ -146,6 +146,7 @@ then
 
     cp -r $CSIUnixDir/Node/models models
     cp -r $CSIUnixDir/Node/views views
+    cp -r $CSIUnixDir/Node/static static
     cp -r $CSIUnixDir/Node/node_modules node_modules
     cp -r $CSIUnixDir/Node/routes routes
 
