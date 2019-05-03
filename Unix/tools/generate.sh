@@ -101,14 +101,14 @@ elif [[ $1 =~ "--update" ]] || [[ $1 =~ "-u" ]]
 then
     cd $CSIUnixDir
     git pull
-    if [[ -f /usr/local/bin/csi-cli ]]
+    if [[ -f ~/.local/bin/csi-cli ]]
     then
-        sudo rm /usr/local/bin/csi-cli
+        rm ~/.local/bin/csi-cli
     fi
     cd tools
     cat generate.sh > csi-cli
     chmod +x csi-cli
-    sudo cp csi-cli /usr/local/bin/
+    cp csi-cli ~/.local/bin/
     rm csi-cli
     echo "Done."
 #For any other option
