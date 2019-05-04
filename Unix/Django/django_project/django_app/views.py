@@ -8,6 +8,17 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render, resolve_url
 from django.urls import reverse
 
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            return HttpResponse("Form Not Valid")
+    else:
+        form = RegistrationForm()
+    return render(request, 'django_app/register.html', {'form':form})
 
 def login_user(request):
     auth_logout(request)
