@@ -209,12 +209,13 @@ then
         fi
 
         mkdir $app_name/templates $app_name/templates/$app_name
-        touch $app_name/urls.py
+        touch $app_name/urls.py $app_name/forms.py
 
         cat $CSIUnixDir/Django/django_project/django_project/settings.py > $project_name/settings.py
         cat $CSIUnixDir/Django/django_project/django_project/urls.py > $project_name/urls.py
         cat $CSIUnixDir/Django/django_project/django_app/views.py > $app_name/views.py
         cat $CSIUnixDir/Django/django_project/django_app/urls.py > $app_name/urls.py
+        cat $CSIUnixDir/Django/django_project/django_app/forms.py > $app_name/forms.py
 
         cp -r $CSIUnixDir/Django/django_project/django_app/static $app_name/
         cp $CSIUnixDir/Django/django_project/django_app/templates/django_app/*.html $app_name/templates/$app_name/

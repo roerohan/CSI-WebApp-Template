@@ -4,10 +4,22 @@ from django.contrib.auth import REDIRECT_FIELD_NAME, authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import redirect, render, resolve_url
 from django.urls import reverse
+from .forms import RegistrationForm
 
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            return HttpResponse("Form Not Valid")
+    else:
+        form = RegistrationForm()
+    return render(request, 'django_app/register.html', {'form':form})
 
 def login_user(request):
     auth_logout(request)
