@@ -5,7 +5,7 @@ if [[ -d .CSI-WebApp-Template ]]
 then
     rm -rf .CSI-WebApp-Template
 fi
-git clone https://github.com/csivitu/CSI-WebApp-Template .CSI-WebApp-Template
+git clone https://github.com/csivitu/CSI-WebApp-Template.git --branch feat/unix --single-branch .CSI-WebApp-Template
 cd .CSI-WebApp-Template/Unix
 export CSIUnixDir=`pwd`
 if [[ -f ~/.local/bin/csi-cli ]]
