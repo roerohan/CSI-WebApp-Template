@@ -269,10 +269,13 @@ then
 fi
 
 #Check if updates are available and notify
-git fetch -q
-git status | grep -q 'behind' && updatereqd=1 || updatereqd=0
+git diff --name-only origin/feat/unix | grep -q ".*" && updatereqd=1 || updatereqd=0
 if [[ $updatereqd -eq 1 ]]
 then
-    echo -e "\e[100m \e[36mUpdates Available "
-    echo -e "\e[100m     \e[36mcsi-cli -u    "
+    echo
+    echo -e "      \e[100m                   \e[49m"
+    echo -e "      \e[100m \e[36mUpdates Available \e[49m"
+    echo -e "      \e[100m     \e[36mcsi-cli -u    \e[49m"
+    echo -e "      \e[100m                   \e[49m"
+    echo
 fi
