@@ -118,14 +118,6 @@ else
     help=1
 fi
 
-#Check if updates are available
-git status | grep -q "up to date" && updatereqd=0 || updatereqd=1
-if [[ $updatereqd -eq 1 ]]
-then
-    echo -e "\e[100m \e[36mUpdates Available "
-    echo -e "\e[100m     \e[36mcsi-cli -u    "
-fi
-
 #To create a Node-js project
 if [[ $node -eq 1 ]]
 then
@@ -274,4 +266,12 @@ then
     echo
     echo "Note: {x y} implies you can use 'csi-cli x' or 'csi-cli y'"
     echo "If 'project-name' is empty, csi-cli assumes you are inside the directory."
+fi
+
+#Check if updates are available
+git status | grep -q "up to date" && updatereqd=0 || updatereqd=1
+if [[ $updatereqd -eq 1 ]]
+then
+    echo -e "\e[100m \e[36mUpdates Available "
+    echo -e "\e[100m     \e[36mcsi-cli -u    "
 fi
