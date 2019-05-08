@@ -268,7 +268,7 @@ then
     echo "If 'project-name' is empty, csi-cli assumes you are inside the directory."
 fi
 
-#Check if updates are available and notify on updates
+#Check if updates are available and notify
 git diff --name-only origin/feat/unix | grep -q ".*" && updatereqd=1 || updatereqd=0
 if [[ $updatereqd -eq 1 ]]
 then
