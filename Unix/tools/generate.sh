@@ -269,7 +269,7 @@ then
 fi
 
 #Check if updates are available and notify
-git fetch | grep -q '[a-z]' && updatereqd=1 || updatereqd=0
+git fetch | grep -q 'CSI' && updatereqd=1 || updatereqd=0
 if [[ $updatereqd -eq 1 ]]
 then
     echo -e "\e[100m \e[36mUpdates Available "
