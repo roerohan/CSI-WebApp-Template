@@ -268,7 +268,7 @@ then
     echo "If 'project-name' is empty, csi-cli assumes you are inside the directory."
 fi
 
-#Check if updates are available
+#Check if updates are available and notify
 git fetch | grep -q '[a-z]' && updatereqd=1 || updatereqd=0
 if [[ $updatereqd -eq 1 ]]
 then
