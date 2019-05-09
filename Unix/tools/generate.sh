@@ -269,10 +269,10 @@ then
 fi
 
 #Check if updates are available and notify
-remote=$(git ls-remote origin -h refs/heads/feat/unix)
-local=$(git rev-parse HEAD)
+remote=$(git ls-remote origin -h refs/heads/feat/unix) #Hash of remote repo
+local=$(git rev-parse HEAD) #Hash of local repo
 
-[ "$remote" = "$local" ] && updatereqd=0 || updatereqd=1
+[ "$remote" = "$local" ] && updatereqd=0 || updatereqd=1 #Matching hashes
 
 if [[ $updatereqd -eq 1 ]]
 then
