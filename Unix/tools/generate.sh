@@ -47,7 +47,6 @@ then
     echo -e "\e[39m"
 fi
 
-#Change to test
 
 #If operation is generate or gen
 if [[ $operation =~ "generate" ]] || [[ $operation =~ "gen" ]]
