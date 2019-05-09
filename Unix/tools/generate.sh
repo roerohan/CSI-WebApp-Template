@@ -34,6 +34,7 @@ then
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
+        echo -e "\e[39m"
         $1="-u"
     else
         echo -e "$col3"
