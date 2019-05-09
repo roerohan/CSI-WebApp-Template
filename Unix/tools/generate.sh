@@ -4,6 +4,8 @@ node=0
 django=0
 version="1.0.0"
 
+operation=$1
+
 CSIUnixDir=~/.CSI-WebApp-Template/Unix
 
 #Check if updates are available and notify
@@ -36,7 +38,7 @@ then
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         echo -e "\e[39m"
-        1="-u"
+        operation="-u"
     else
         echo -e "$col3"
         echo "Update cancelled."
@@ -48,7 +50,7 @@ fi
 #Change to test
 
 #If operation is generate or gen
-if [[ $1 =~ "generate" ]] || [[ $1 =~ "gen" ]]
+if [[ $operation =~ "generate" ]] || [[ $operation =~ "gen" ]]
 then
     if [[ $# -gt 3 ]]
     then
@@ -72,17 +74,17 @@ then
     fi
 
 #If the operation is --help or -h
-elif [[ $1 =~ "--help" ]] || [[ $1 =~ "-h" ]]
+elif [[ $operation =~ "--help" ]] || [[ $operation =~ "-h" ]]
 then
     help=1
 
 #If the operation is --version or -v
-elif [[ $1 =~ "--version" ]] || [[ $1 =~ "-v" ]]
+elif [[ $operation =~ "--version" ]] || [[ $operation =~ "-v" ]]
 then
     echo "$version"
 
 #If the operation is --delete or -D
-elif [[ $1 =~ "--delete" ]] || [[ $1 =~ "-D" ]]
+elif [[ $operation =~ "--delete" ]] || [[ $operation =~ "-D" ]]
 then
     read -p "Are you sure? (y/N): " -n 1 -r
     echo
@@ -101,7 +103,7 @@ then
     fi
 
 #If the operation is --reset or -r
-elif [[ $1 =~ "--reset" ]] || [[ $1 == "-r" ]]
+elif [[ $operation =~ "--reset" ]] || [[ $operation == "-r" ]]
 then
     echo
     read -p "This will delete the current directory. Are you sure you are in the right directory? (y/N): " -n 1 -r
@@ -139,7 +141,7 @@ then
     fi
 
 #To update the CLI
-elif [[ $1 =~ "--update" ]] || [[ $1 =~ "-u" ]]
+elif [[ $operation =~ "--update" ]] || [[ $operation =~ "-u" ]]
 then
     cd $CSIUnixDir
     git pull
