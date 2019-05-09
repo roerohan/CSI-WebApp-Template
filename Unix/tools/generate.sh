@@ -45,6 +45,8 @@ then
     fi
 fi
 
+#Change to test
+
 #If operation is generate or gen
 if [[ $1 =~ "generate" ]] || [[ $1 =~ "gen" ]]
 then
