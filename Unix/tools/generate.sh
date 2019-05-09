@@ -9,7 +9,6 @@ CSIUnixDir=~/.CSI-WebApp-Template/Unix
 remote=$(git ls-remote origin -h refs/heads/feat/unix) #Hash of remote repo
 local=$(git rev-parse HEAD) #Hash of local repo
 
-
 [[ "$remote" == "$local"* ]] && updatereqd=0 || updatereqd=1 #Matching hashes
 
 if [[ $updatereqd -eq 1 ]]
@@ -26,7 +25,7 @@ then
     echo -e "$col2 ---------------------------"
     echo -e "$col2|                           |"
     echo -e "$col2| $col3 Newer Version Available  $col2|"
-    echo -e "$col2|                           |"
+    echo -e "$col2|     $col3 To update, run:      $col2|"
     echo -e "$col2|        $col3 csi-cli -u        $col2|"
     echo -e "$col2|                           |"
     echo -e "$col2 ---------------------------"
@@ -42,6 +41,7 @@ then
         echo "Update cancelled."
         echo -e "\e[39m"
     fi
+    echo -e "\e[39m"
 fi
 
 #Change to test
