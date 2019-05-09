@@ -36,6 +36,7 @@ then
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         csi-cli -u
+        exit 0
     else
         echo -e "$col3"
         echo "Update cancelled."
