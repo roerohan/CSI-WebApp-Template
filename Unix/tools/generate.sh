@@ -8,7 +8,7 @@ operation=$1
 
 CSIUnixDir=~/.CSI-WebApp-Template/Unix
 
-#Check if updates are available and notify
+#Check if updates are available and notify on update
 remote=$(git ls-remote origin -h refs/heads/feat/unix) #Hash of remote repo
 local=$(git rev-parse HEAD) #Hash of local repo
 
