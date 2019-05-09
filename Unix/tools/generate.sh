@@ -2,6 +2,7 @@
 
 node=0
 django=0
+version="1.0.0"
 
 CSIUnixDir=~/.CSI-WebApp-Template/Unix
 
@@ -35,7 +36,7 @@ then
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         echo -e "\e[39m"
-        $1="-u"
+        1="-u"
     else
         echo -e "$col3"
         echo "Update cancelled."
@@ -78,7 +79,7 @@ then
 #If the operation is --version or -v
 elif [[ $1 =~ "--version" ]] || [[ $1 =~ "-v" ]]
 then
-    echo "1.0.0"
+    echo "$version"
 
 #If the operation is --delete or -D
 elif [[ $1 =~ "--delete" ]] || [[ $1 =~ "-D" ]]
