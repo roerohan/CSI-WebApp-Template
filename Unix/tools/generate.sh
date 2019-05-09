@@ -276,10 +276,32 @@ local=$(git rev-parse HEAD) #Hash of local repo
 
 if [[ $updatereqd -eq 1 ]]
 then
+    col1="\e[32m"
+    col2="\e[33m"
+    col3="\e[34m"
     echo
-    echo -e "      \e[100m                   \e[49m"
-    echo -e "      \e[100m \e[36mUpdates Available \e[49m"
-    echo -e "      \e[100m     \e[36mcsi-cli -u    \e[49m"
-    echo -e "      \e[100m                   \e[49m"
+    echo -e "$col1          _            _ _ "
+    echo -e "$col1  ___ ___(_)       ___| (_)"
+    echo -e "$col1 / __/ __| |_____ / __| | |"
+    echo -e "$col1| (__\__ \ |_____| (__| | |"
+    echo -e "$col1 \___|___/_|      \___|_|_|"
     echo
+    echo -e "$col2 ---------------------------"
+    echo -e "$col2|                           |"
+    echo -e "$col2| $col3 Newer Version Available  $col2|"
+    echo -e "$col2|                           |"
+    echo -e "$col2|        $col3 csi-cli -u        $col2|"
+    echo -e "$col2|                           |"
+    echo -e "$col2 ---------------------------"
+    echo -e "$col1"
+    read -p "Do you want to update? (y/N): " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        csi-cli -u
+    else
+        echo -e "$col3"
+        echo "Update cancelled."
+        echo "\e[39m"
+    fi
 fi
