@@ -269,6 +269,7 @@ then
 fi
 
 #Check if updates are available and notify
+#Test change
 git diff --name-only origin/feat/unix | grep -q ".*" && updatereqd=1 || updatereqd=0
 if [[ $updatereqd -eq 1 ]]
 then
