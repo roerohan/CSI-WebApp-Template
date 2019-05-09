@@ -269,7 +269,11 @@ then
 fi
 
 #Check if updates are available and notify
-git diff --name-only origin/feat/unix | grep -q ".*" && updatereqd=1 || updatereqd=0
+remote=$(git ls-remote origin -h refs/heads/feat/unix)
+local=$(git rev-parse HEAD)
+
+[ "$remote" = "$local" ] && updatereqd=0 || updatereqd=1
+
 if [[ $updatereqd -eq 1 ]]
 then
     echo
