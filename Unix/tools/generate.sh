@@ -36,7 +36,6 @@ then
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        echo -e "\e[39m"
         csi-cli -u
     else
         echo -e "$col3"
