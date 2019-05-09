@@ -30,4 +30,14 @@ then
 fi
 cp csi-cli ~/.local/bin/
 rm csi-cli
+col1="\e[32m"
+col2="\e[33m"
+col3="\e[34m"
+echo
+echo -e "$col1          _            _ _ "
+echo -e "$col1  ___ ___(_)       ___| (_)"
+echo -e "$col1 / __/ __| |_____ / __| | |"
+echo -e "$col1| (__\__ \ |_____| (__| | |"
+echo -e "$col1 \___|___/_|      \___|_|_|"
+echo
 echo "Installation Complete."
