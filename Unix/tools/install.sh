@@ -40,4 +40,4 @@ echo -e "$col1 / __/ __| |_____ / __| | |"
 echo -e "$col1| (__\__ \ |_____| (__| | |"
 echo -e "$col1 \___|___/_|      \___|_|_|"
 echo
-echo "Installation Complete."
+echo "Installation Complete!"
