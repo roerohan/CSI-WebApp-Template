@@ -7,8 +7,10 @@ version="1.0.0"
 operation=$1
 
 CSIUnixDir=~/.CSI-WebApp-Template/Unix
+location=`pwd`
 
 #Check if updates are available and notify on update
+cd $CSIUnixDir
 remote=$(git ls-remote origin -h refs/heads/feat/unix) #Hash of remote repo
 local=$(git rev-parse HEAD) #Hash of local repo
 
@@ -46,7 +48,7 @@ then
     fi
     echo -e "\e[39m"
 fi
-
+cd $location
 
 #If operation is generate or gen
 if [[ $operation =~ "generate" ]] || [[ $operation =~ "gen" ]]
