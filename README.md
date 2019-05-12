@@ -1,4 +1,4 @@
-# CSI-WebApp-Template
+# CSI-WebApp-Template (csi-cli)
 
 The CSI-WebApp-Template is a CLI tool which helps you generate a Node-js or Django template for a Website with features such as:-
 
@@ -50,7 +50,7 @@ Django: Do - pip install django
 
 ```
 Create a directory having the name of the Project
-Run the command: csi-cli gen -n projectname OR csi-cli gen -d projectname
+Run the command: csi-cli gen -n your-project-name OR csi-cli gen -d your-project-name
 ```
 
 #### The following are the commands that our CLI supports.
