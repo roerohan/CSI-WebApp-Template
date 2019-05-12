@@ -11,12 +11,15 @@ location=`pwd`
 
 #Check if updates are available and notify on update
 cd $CSIUnixDir
-remote=$(git ls-remote origin -h refs/heads/feat/unix) #Hash of remote repo
+checkupdate=0
+remote=$(timeout 2 git ls-remote origin -h refs/heads/feat/unix) #Hash of remote repo
+if [[ $? -eq 0 ]]
+    checkupdate=1
 local=$(git rev-parse HEAD) #Hash of local repo
 
 [[ "$remote" == "$local"* ]] && updatereqd=0 || updatereqd=1 #Matching hashes
 
-if [[ $updatereqd -eq 1 ]]
+if [[ $updatereqd -eq 1 ]] && [[ $checkupdate -eq 1 ]]
 then
     col1="\e[32m"
     col2="\e[33m"
