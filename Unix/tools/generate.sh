@@ -12,7 +12,7 @@ location=`pwd`
 #Check if updates are available and notify on update
 cd $CSIUnixDir
 
-timeout 1 wget -q --spider http://google.com
+timeout 1 wget -q --spider http://google.com #Check if there is internet connection
 if [[ $? -eq 0 ]]
 then
     remote=$(timeout 2 git ls-remote origin -h refs/heads/feat/unix) #Hash of remote repo
