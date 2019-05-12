@@ -10,7 +10,7 @@ The following is a set of guidelines for contributing to csi-cli. These are most
 
 1. [Styleguides](#styleguides)
 2. [What should I know before I get started?](#what-should-i-know-before-i-get-started)
-3. [How can I contribute?](#how-can-i-contribute)
+3. [How Can I contribute?](#how-can-i-contribute)
 
 # Guidelines
 The following are the guidelines we request you to follow in order to contribute to csi-cli.
@@ -78,7 +78,7 @@ You can contribute to any of the features you want by knowing atleast one of the
   - HTML and CSS - For Frontend Code
   - Markdown - To contribute to any of the .md files.
   
-# How Can I contribute
+# How Can I Contribute
 You can contribute by:
   - Reporting Bugs
   - Suggesting Enhancements
