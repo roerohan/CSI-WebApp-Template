@@ -30,6 +30,7 @@ then
 fi
 cp csi-cli ~/.local/bin/
 rm csi-cli
+echo "Notice: You will be notified about updates only if your internet connection is fast enough."
 col1="\e[32m"
 col2="\e[33m"
 col3="\e[34m"
