@@ -12,7 +12,7 @@ The CSI-WebApp-Template is a CLI tool which helps you generate a Node-js or Djan
     - Admin Panel - Add, Update, Delete User
     - Authentication with Sessions
 
-# Table Of Contents
+## Table Of Contents
    1. [Installation](#installation)
        * [For Windows](#for-windows)
        * [For Unix Like OS](#for-unix-based-os)
