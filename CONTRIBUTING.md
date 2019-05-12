@@ -78,7 +78,7 @@ You can contribute to any of the features you want by knowing atleast one of the
   - HTML and CSS - For Frontend Code
   - Markdown - To contribute to any of the .md files.
   
-# How Can I Contribute
+## How Can I Contribute
 You can contribute by:
   - Reporting Bugs
   - Suggesting Enhancements
