@@ -39,7 +39,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/csivitu/CSI-WebApp-Templat
 ```
 #### OR
 ```bash
-git clone https://github.com/csivitu/CSI-WebApp-Template.git ~/.CSI-WebApp-Template
+git clone https://github.com/csivitu/CSI-WebApp-Template.git ~/CSI-WebApp-Template
 cd .CSI-WebApp-Template
 ./Unix/tools/install.sh
 ```
