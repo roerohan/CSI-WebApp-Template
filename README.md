@@ -4,13 +4,14 @@
 
 The CSI-WebApp-Template is a CLI tool which helps you generate a Node-js or Django template for a Website with features such as:-
 
-    - Connect to Database
-    - Basic User Model
-    - Add User (with hashed password)
-    - User Login/Logout
-    - Admin Login/Logout
-    - Admin Panel - Add, Update, Delete User
-    - Authentication with Sessions
+   - Connect to Database
+   - Basic User Model
+   - Add User (with hashed password)
+   - User Login/Logout
+   - Admin Login/Logout
+   - Admin Panel - Add, Update, Delete User
+   - Authentication with Sessions
+   - Required HTML Pages linked with CSS
 
 ## Table Of Contents
    1. [Installation](#installation)
