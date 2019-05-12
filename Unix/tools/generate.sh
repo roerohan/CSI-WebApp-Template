@@ -12,47 +12,51 @@ location=`pwd`
 #Check if updates are available and notify on update
 cd $CSIUnixDir
 
-remote=$(timeout 2 git ls-remote origin -h refs/heads/feat/unix) #Hash of remote repo
+wget -q --spider http://google.com
 if [[ $? -eq 0 ]]
 then
-    local=$(git rev-parse HEAD) #Hash of local repo
-
-    [[ "$remote" == "$local"* ]] && updatereqd=0 || updatereqd=1 #Matching hashes
-
-    if [[ $updatereqd -eq 1 ]]
+    remote=$(timeout 2 git ls-remote origin -h refs/heads/feat/unix) #Hash of remote repo
+    if [[ $? -eq 0 ]]
     then
-        col1="\e[32m"
-        col2="\e[33m"
-        col3="\e[34m"
-        echo -e "$col1          _            _ _ "
-        echo -e "$col1  ___ ___(_)       ___| (_)"
-        echo -e "$col1 / __/ __| |_____ / __| | |"
-        echo -e "$col1| (__\__ \ |_____| (__| | |"
-        echo -e "$col1 \___|___/_|      \___|_|_|"
-        echo
-        echo -e "$col2 ---------------------------"
-        echo -e "$col2|                           |"
-        echo -e "$col2| $col3 Newer Version Available  $col2|"
-        echo -e "$col2|     $col3 To update, run:      $col2|"
-        echo -e "$col2|        $col3 csi-cli -u        $col2|"
-        echo -e "$col2|                           |"
-        echo -e "$col2 ---------------------------"
-        echo -e "$col1"
-        read -p "Do you want to update? (y/N): " -n 1 -r
-        echo
-        if [[ $REPLY =~ ^[Yy]$ ]]
+        local=$(git rev-parse HEAD) #Hash of local repo
+
+        [[ "$remote" == "$local"* ]] && updatereqd=0 || updatereqd=1 #Matching hashes
+
+        if [[ $updatereqd -eq 1 ]]
         then
-            echo -e "\e[39m"
-            operation="-u"
-        else
-            echo -e "$col3"
-            echo "Update cancelled."
+            col1="\e[32m"
+            col2="\e[33m"
+            col3="\e[34m"
+            echo -e "$col1          _            _ _ "
+            echo -e "$col1  ___ ___(_)       ___| (_)"
+            echo -e "$col1 / __/ __| |_____ / __| | |"
+            echo -e "$col1| (__\__ \ |_____| (__| | |"
+            echo -e "$col1 \___|___/_|      \___|_|_|"
+            echo
+            echo -e "$col2 ---------------------------"
+            echo -e "$col2|                           |"
+            echo -e "$col2| $col3 Newer Version Available  $col2|"
+            echo -e "$col2|     $col3 To update, run:      $col2|"
+            echo -e "$col2|        $col3 csi-cli -u        $col2|"
+            echo -e "$col2|                           |"
+            echo -e "$col2 ---------------------------"
+            echo -e "$col1"
+            read -p "Do you want to update? (y/N): " -n 1 -r
+            echo
+            if [[ $REPLY =~ ^[Yy]$ ]]
+            then
+                echo -e "\e[39m"
+                operation="-u"
+            else
+                echo -e "$col3"
+                echo "Update cancelled."
+                echo -e "\e[39m"
+            fi
             echo -e "\e[39m"
         fi
-        echo -e "\e[39m"
     fi
-    cd $location
 fi
+cd $location
 
 #If operation is generate or gen
 if [[ $operation =~ "generate" ]] || [[ $operation =~ "gen" ]]
