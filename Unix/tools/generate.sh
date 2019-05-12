@@ -14,7 +14,9 @@ cd $CSIUnixDir
 checkupdate=0
 remote=$(timeout 2 git ls-remote origin -h refs/heads/feat/unix) #Hash of remote repo
 if [[ $? -eq 0 ]]
+then
     checkupdate=1
+fi
 local=$(git rev-parse HEAD) #Hash of local repo
 
 [[ "$remote" == "$local"* ]] && updatereqd=0 || updatereqd=1 #Matching hashes
