@@ -1,16 +1,27 @@
-# CSI-WebApp-Template (csi-cli)
+# CSI-WebApp-Template (csi-cli)  
 
-![csi-cli](https://raw.githubusercontent.com/csivitu/CSI-WebApp-Template/unix/csi-cli.png)
+```
+
+                           ██████╗███████╗██╗       ██████╗██╗     ██╗
+                          ██╔════╝██╔════╝██║      ██╔════╝██║     ██║
+                          ██║     ███████╗██║█████╗██║     ██║     ██║
+                          ██║     ╚════██║██║╚════╝██║     ██║     ██║
+                          ╚██████╗███████║██║      ╚██████╗███████╗██║
+                           ╚═════╝╚══════╝╚═╝       ╚═════╝╚══════╝╚═╝
+                                            
+```  
+
 
 The CSI-WebApp-Template is a CLI tool which helps you generate a Node-js or Django template for a Website with features such as:-
 
-    - Connect to Database
-    - Basic User Model
-    - Add User (with hashed password)
-    - User Login/Logout
-    - Admin Login/Logout
-    - Admin Panel - Add, Update, Delete User
-    - Authentication with Sessions
+   - Connect to Database
+   - Basic User Model
+   - Add User (with hashed password)
+   - User Login/Logout
+   - Admin Login/Logout
+   - Admin Panel - Add, Update, Delete User
+   - Authentication with Sessions
+   - Required HTML Pages linked with CSS
 
 ## Table Of Contents
    1. [Installation](#installation)
@@ -38,7 +49,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/csivitu/CSI-WebApp-Templat
 ```
 #### OR
 ```bash
-git clone https://github.com/csivitu/CSI-WebApp-Template.git ~/.CSI-WebApp-Template
+git clone https://github.com/csivitu/CSI-WebApp-Template.git ~/CSI-WebApp-Template
 cd .CSI-WebApp-Template
 ./Unix/tools/install.sh
 ```
