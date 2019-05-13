@@ -31,15 +31,12 @@ fi
 cp csi-cli ~/.local/bin/
 rm csi-cli
 echo "Notice: You will be notified about updates only if your internet connection is fast enough."
-col1="\e[32m"
-col2="\e[33m"
-col3="\e[34m"
 echo
-echo "\e[32m ██████╗███████╗██╗       ██████╗██╗     ██╗"
-echo "$col1 ██╔════╝██╔════╝██║      ██╔════╝██║     ██║"
-echo "$col1 ██║     ███████╗██║█████╗██║     ██║     ██║"
-echo "$col1 ██║     ╚════██║██║╚════╝██║     ██║     ██║"
-echo "$col1 ╚██████╗███████║██║      ╚██████╗███████╗██║"
-echo "$col1  ╚═════╝╚══════╝╚═╝       ╚═════╝╚══════╝╚═╝"
+echo "   ██████╗███████╗██╗       ██████╗██╗     ██╗"
+echo "  ██╔════╝██╔════╝██║      ██╔════╝██║     ██║"
+echo "  ██║     ███████╗██║█████╗██║     ██║     ██║"
+echo "  ██║     ╚════██║██║╚════╝██║     ██║     ██║"
+echo "  ╚██████╗███████║██║      ╚██████╗███████╗██║"
+echo "   ╚═════╝╚══════╝╚═╝       ╚═════╝╚══════╝╚═╝"
 echo
 echo "Installation Complete!"
