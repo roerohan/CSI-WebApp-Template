@@ -1,5 +1,6 @@
 # CSI-WebApp-Template (csi-cli)  
 
+```
 
  ██████╗███████╗██╗       ██████╗██╗     ██╗
 ██╔════╝██╔════╝██║      ██╔════╝██║     ██║
@@ -8,6 +9,7 @@
 ╚██████╗███████║██║      ╚██████╗███████╗██║
  ╚═════╝╚══════╝╚═╝       ╚═════╝╚══════╝╚═╝
                                             
+```  
 
 
 The CSI-WebApp-Template is a CLI tool which helps you generate a Node-js or Django template for a Website with features such as:-
