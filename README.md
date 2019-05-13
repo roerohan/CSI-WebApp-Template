@@ -31,6 +31,8 @@ The CSI-WebApp-Template is a CLI tool which helps you generate a Node-js or Djan
        * [For Node-js Template](#for-node-js-template)
        * [For Django Template](#for-django-template)
    3. [Usage](#usage)
+   4. [Contributing](#contributing)
+   5. [License](#license)
 
 ## Installation
 
