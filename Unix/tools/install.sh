@@ -30,10 +30,10 @@ then
 fi
 cp csi-cli ~/.local/bin/
 rm csi-cli
-echo -e "\e[33m Notice: You will be notified about updates only if your internet connection is fast enough."
 col1="\e[32m"
-col2="\e[33m"
 col3="\e[34m"
+col2="\e[33m"
+echo -e "$col2 Notice: You will be notified about updates only if your internet connection is fast enough."
 echo
 echo -e "$col1  ██████╗███████╗██╗       ██████╗██╗     ██╗"
 echo -e "$col1 ██╔════╝██╔════╝██║      ██╔════╝██║     ██║"
