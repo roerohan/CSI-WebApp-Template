@@ -14,6 +14,7 @@ All notable changes to the "testing" extension will be documented in this file.
 
 ### CLI for Unix Based OS (and new Windows Terminal)
 
+#### Added
 - Node Template
     * Connect to MongoDB on localhost:27017
     * Create Basic User model
