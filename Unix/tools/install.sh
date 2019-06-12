@@ -1,4 +1,4 @@
-#!bin/env bash
+#!/bin/bash
 
 cd ~
 if [[ -d .CSI-WebApp-Template ]]
