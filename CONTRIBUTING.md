@@ -56,6 +56,11 @@ Bash code should be written according to the following.
   - Comment lines wherever required.
   - Should not affect the structure of the code already written.
 
+#### C/C++
+Readability of code can be enhanced by the following:
+  - Names of variables should be self-explanatory.
+  - Comment lines wherever needed.
+
 #### HTML and CSS
 HTML and CSS code should be written keeping in mind the following:
   - The new html pages must follow the same theme. If a new theme is suggested, it must contain all html pages.
