@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/bash
 
 node=0
 django=0
