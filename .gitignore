@@ -1,0 +1,9 @@
+.vscode
+bin
+obj
+*.cpb
+*.depend
+*.layout
+
+Windows/tools/csicli
+Windows/tools/csi-cli

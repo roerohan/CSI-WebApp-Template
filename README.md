@@ -58,6 +58,8 @@ cd .CSI-WebApp-Template
 
 ## Requirements
 
+> For Unix Based OS, ~/.local/bin must be added to PATH.
+
 ### For Node-js Template
 
    - Node-js (with npm)
