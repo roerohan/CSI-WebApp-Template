@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/css/user/style.css" />
+    <title>Registration Page</title>
+    {{!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> UNCOMMENT FOR RECAPTCHA--}}
+    {{!-- <style>
+        .grecaptcha-badge {
+            visibility: hidden !important;
+        }
+    </style> UNCOMMENT FOR RECAPTCHA--}}
+</head>
+
+<body class="container" style="margin: 10% auto">
+    {{!-- <div class="g-recaptcha"
+    data-sitekey="**Your key here**"
+    data-callback="sendFormPost"
+    data-size="invisible">
+    </div> UNCOMMENT FOR RECAPTCA--}}
+    <h3>Register</h3>
+
+    <form autocomplete="off" action="/register" method="POST">
+        <div class="form-group">
+            <label>Userame (No Spaces, 3-20 characters)</label>
+            <input type="text" class="form-control" name="name" placehoder="Name">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email" placehoder="Email">
+        </div>
+        <div class="form-group">
+            <label>Password (8-16 Characters)</label>
+            <input type="password" class="form-control" name="password" placehoder="Password">
+        </div>
+        <div class="form-group">
+            <label>Mobile Number</label>
+            <input type="number" class="form-control" name="mobile" placehoder="Mobile">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info"><i class="fa fa-database"></i>Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>
