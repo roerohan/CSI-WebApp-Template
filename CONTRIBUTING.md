@@ -41,21 +41,26 @@ The following are the guidelines for Javascript code.
   - Comment lines wherever required.
   - Preferably use async await.
   - Should follow the specified structure in structure.md
-  
+
 #### Python
 Please follow the following guidelines for Python code.
   - Names of variables and routes should be self-explanatory.
   - Comment lines wherever required.
   - Add a requirements.txt if any new packages are included.
   - Should follow the structure mentioned in structure.md
-  
+
 #### Bash
 Bash code should be written according to the following.
   - Names of variables should be self-explanatory.
   - Well formatted and indented code.
   - Comment lines wherever required.
   - Should not affect the structure of the code already written.
-  
+
+#### C/C++
+Readability of code can be enhanced by the following:
+  - Names of variables should be self-explanatory.
+  - Comment lines wherever needed.
+
 #### HTML and CSS
 HTML and CSS code should be written keeping in mind the following:
   - The new html pages must follow the same theme. If a new theme is suggested, it must contain all html pages.
@@ -77,7 +82,7 @@ You can contribute to any of the features you want by knowing atleast one of the
   - C/C++ (For Windows)
   - HTML and CSS - For Frontend Code
   - Markdown - To contribute to any of the .md files.
-  
+
 ## How Can I Contribute
 You can contribute by:
   - Reporting Bugs
