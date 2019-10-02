@@ -84,10 +84,10 @@ router.post('/update/:id', (req, res) => {
     User.findOneAndUpdate({
         id: req.params.id
     }, {
-        name: name,
-        mobile: mobile,
-        email: email,
-        password: password
+        name: user.name,
+        mobile: user.mobile,
+        email: user.email,
+        password: user.password
     }, (err, doc) => {
         if(!err) {
             res.redirect('/admin');
