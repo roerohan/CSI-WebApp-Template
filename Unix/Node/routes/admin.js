@@ -73,8 +73,31 @@ router.get('/delete/:id', (req, res) => {
 });
 
 //Update user data from admin panel
-router.get('/update/:id', (req, res) => {
-    //TODO: write code for update
+router.post('/update/:id', (req, res) => {
+
+    let user = new User();
+    user.name = req.body.name.toString().trim();
+    user.mobile = req.body.mobile.toString().trim();
+    user.email = req.body.email.toString().trim();
+    user.password = req.body.password.toString().trim();
+
+    User.findOneAndUpdate({
+        id: req.params.id
+    }, {
+        name: name,
+        mobile: mobile,
+        email: email,
+        password: password
+    }, (err, doc) => {
+        if(!err) {
+            res.redirect('/admin');
+            console.log(doc);
+        }
+        else {
+            console.log('Error in user update:' + err);
+            res.send("Server error");
+        }
+    });
 });
 
 module.exports = router;
