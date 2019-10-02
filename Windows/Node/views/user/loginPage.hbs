@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/css/user/style.css">
+    <title>Login-Page</title>
+</head>
+
+<body>
+    <div class="bars">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- This has too many classes? -->
+            <div class="section-left col-12 col-lg-6 text-center logincolumn">
+                <div class="branding">
+                    <h1>Login</h1>
+                    <span class="branding-subtitle">
+                        Login Page provided by csi-cli
+                    </span>
+                </div>
+            </div>
+            <div class="section-right col-12 col-lg-6 logincolumn">
+                <div class="background-blues">
+                    <div class="card card-login text-center">
+                        <div class="card-body">
+                            <h3 class="card-title">Authenticate Yourself</h3>
+                            <form name="LoginForm" method="POST">
+                                <div class="form-group form-group--full-width">
+                                    <input name="username" class="form-control" type="text" placeholder="Username">
+                                </div>
+                                <div class="form-group form-group--full-width">
+                                    <input name="password" class="form-control" type="password" placeholder="Password">
+                                </div>
+
+                                <div class="form-group mt-5">
+                                    <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+                                </div>
+                                {{#if messages}}
+                                <strong>Invalid username or password</strong>
+                                {{/if}}
+
+                            </form>
+                            <div class="card-link">
+                                <a href="javascript:alert('Under Construction.');">Forgot Password?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
