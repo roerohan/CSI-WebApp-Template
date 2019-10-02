@@ -1,0 +1,5 @@
+body{
+    height: 100vh;
+    text-align: center;
+    background-image: linear-gradient(to bottom right, lightblue, blue);
+}
