@@ -92,7 +92,7 @@ In absence of project-name, csi-cli assumes you are in the project directory.
 
 ## Contributing
 
-   - For Contributing to csi-cli, refer to [CONTRIBUTING.md](https://github.com/csivitu/CSI-WebApp-Template/blob/master/CONTRIBUTING.md)
+   - For Contributing to csi-cli, refer to [CONTRIBUTING.md](https://github.com/csivitu/CSI-WebApp-Template/blob/master/CONTRIBUTING.md).
 
 ## License
 
